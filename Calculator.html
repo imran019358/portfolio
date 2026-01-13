@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Android Calculator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      background: #121212;
+      font-family: system-ui, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .calculator {
+      width: 100%;
+      max-width: 400px;
+      height: 100vh;
+      background: #1c1c1c;
+      display: flex;
+      flex-direction: column;
+      padding: 15px;
+    }
+
+    .display {
+      flex: 1;
+      color: white;
+      font-size: 48px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+      padding: 20px;
+      overflow-x: auto;
+    }
+
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    button {
+      height: 65px;
+      border-radius: 50%;
+      border: none;
+      font-size: 22px;
+      font-weight: 500;
+      cursor: pointer;
+      background: #2a2a2a;
+      color: white;
+    }
+
+    .operator {
+      background: #3d5afe;
+      color: white;
+    }
+
+    .equal {
+      background: #00c853;
+    }
+
+    .clear {
+      background: #ff5252;
+    }
+
+    button:active {
+      transform: scale(0.95);
+    }
+    <meta charset="UTF-8">
+    
+  </style>
+</head>
+<body>
+<audio id="click" src="https://www.soundjay.com/buttons/sounds/button-16.mp3"
+></audio>
+
+<div class="calculator">
+  <div class="display" id="display">0</div>
+
+  <div class="buttons">
+    <button class="clear" onclick="vibrate(); playSound(); clearAll()">C</button>
+    <button onclick="vibrate(); playSound(); del()">DEL</button>
+    <button onclick="vibrate(); playSound(); add('%')">%</button>
+    <button class="operator" onclick="vibrate(); playSound(); add('/')">/</button>
+
+    <button onclick="vibrate(); playSound(); add('7')">7</button>
+    <button onclick="vibrate(); playSound(); add('8')">8</button>
+    <button onclick="vibrate(); playSound(); add('9')">9</button>
+    <button class="operator" onclick="vibrate(); playSound();add('*')">*</button>
+
+    <button onclick="vibrate(); playSound(); add('4')">4</button>
+    <button onclick="vibrate(); playSound(); add('5')">5</button>
+    <button onclick="vibrate(); playSound(); add('6')">6</button>
+    <button class="operator" onclick="vibrate(); playSound(); add('-')">-</button>
+
+    <button onclick="vibrate(); playSound(); add('1')">1</button>
+    <button onclick="vibrate(); playSound(); add('2')">2</button>
+    <button onclick="vibrate(); playSound(); add('3')">3</button>
+    <button class="operator" onclick="Vibrate(); playSound(); add('+')">+</button>
+
+    <button onclick="Vibrate(); playSound(); add('0')">0</button>
+    <button onclick="Vibrate(); playSound(); add('.')">.</button>
+    <button class="equal" onclick="vibrate(); playSound(); calculate()">=</button>
+  </div>
+</div>
+
+<script>
+function vibrate() {
+  if (navigator.vibrate) {
+    navigator.vibrate(30);
+  }
+}
+
+let display = document.getElementById("display");
+
+function add(val) {
+  if (display.innerText === "0") display.innerText = "";
+  display.innerText += val;
+}
+
+function clearAll() {
+  display.innerText = "0";
+}
+
+function del() {
+  display.innerText = display.innerText.slice(0, -1);
+  if (display.innerText === "") display.innerText = "0";
+}
+
+function calculate() {
+  try {
+    display.innerText = eval(display.innerText);
+  } catch {
+    display.innerText = "Error";
+  }
+}
+function playSound() {
+  document.getElementById("click").currentTime = 0;
+  document.getElementById("click").play();
+}
+
+</script>
+
+</body>
+</html>

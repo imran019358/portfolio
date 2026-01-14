@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Elite Estates – Kolkata</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Montserrat}
+body{
+background:#0b0b0b;
+color:white;
+overflow-x:hidden;
+}
+header{
+height:100vh;
+background:
+linear-gradient(to right,rgba(0,0,0,.8),rgba(0,0,0,.4)),
+url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c');
+background-size:cover;
+display:flex;
+align-items:center;
+padding:40px;
+}
+.hero{
+max-width:500px;
+}
+.hero h1{
+font-size:50px;
+color:#d4af37;
+}
+.hero p{
+margin:15px 0;
+color:#ccc;
+}
+.btn{
+padding:14px 30px;
+background:#d4af37;
+border:none;
+border-radius:30px;
+color:black;
+text-decoration:none;
+font-weight:600;
+display:inline-block;
+margin-top:10px;
+}
+section{
+padding:80px 40px;
+}
+h2{
+color:#d4af37;
+margin-bottom:30px;
+font-size:32px;
+}
+.properties{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+.card{
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(15px);
+border-radius:20px;
+overflow:hidden;
+transition:.4s;
+border:1px solid rgba(255,255,255,0.1);
+}
+.card:hover{
+transform:translateY(-10px) scale(1.03);
+box-shadow:0 20px 40px rgba(0,0,0,.6);
+}
+.card img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+.card .info{
+padding:20px;
+}
+.card h3{
+color:#d4af37;
+margin-bottom:8px;
+}
+.card p{
+color:#ccc;
+}
+.contact{
+background:#050505;
+text-align:center;
+}
+input,textarea{
+width:90%;
+max-width:450px;
+padding:14px;
+margin:10px 0;
+border:none;
+border-radius:12px;
+background:#111;
+color:white;
+}
+button{
+padding:14px 40px;
+border:none;
+border-radius:30px;
+background:#d4af37;
+font-weight:bold;
+}
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25d366;
+padding:15px 20px;
+border-radius:50px;
+color:white;
+text-decoration:none;
+font-weight:bold;
+box-shadow:0 0 20px #25d366;
+}
+@media(max-width:600px){
+.hero h1{font-size:36px;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="hero">
+<h1>Elite Estates</h1>
+<p>Kolkata’s Luxury Real Estate Specialists</p>
+<a class="btn" href="#listings">Explore Properties</a>
+</div>
+</header>
+
+<section id="listings">
+<h2>Featured Properties</h2>
+
+<div class="properties">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6">
+<div class="info">
+<h3>3 BHK Luxury Apartment</h3>
+<p>Salt Lake • ₹85 Lakhs</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c">
+<div class="info">
+<h3>Premium Villa</h3>
+<p>New Town • ₹2.5 Crore</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1599423300746-b62533397364">
+<div class="info">
+<h3>Modern 2 BHK</h3>
+<p>Rajarhat • ₹65 Lakhs</p>
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="contact">
+<h2>Book a Property Visit</h2>
+<form>
+<input type="text" placeholder="Full Name">
+<input type="tel" placeholder="Phone Number">
+<textarea placeholder="Which property are you interested in?"></textarea>
+<br>
+<button>Submit</button>
+</form>
+</section>
+
+<a class="whatsapp" href="https://wa.me/919999999999" target="_blank">
+WhatsApp Us
+</a>
+
+</body>
+</html>
